@@ -1,37 +1,51 @@
-import { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useState } from 'react';
+import styles from './App.module.css';
 
 const App = () => {
-  const [tasks, setTasks] = useState<{ text: string; index: number }[]>([])
-  const [input, setInput] = useState('')
+  const [tasks, setTasks] = useState<{ text: string; index: number }[]>([]);
+  const [input, setInput] = useState('');
 
-  const handleAddTask = () => {
-    if (input.trim() === '') return
-    setTasks([...tasks, { text: input, index: tasks.length }])
-    setInput('')
+  function handleKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
+    if (e.key === 'Enter') {
+      handleAddTask();
+    }
+  }
+  function handleAddTask() {
+    if (input.trim() === '') return;
+    setTasks([...tasks, { text: input, index: tasks.length }]);
+    setInput('');
   }
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value)
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    setInput(e.target.value);
   }
 
   return (
-    <div style={{ marginLeft: '45vw' }}>
+    <div className={styles.container}>
       <div>
-        <h1>Todo</h1>
-        <input type='text' value={input} onChange={handleChange} />
-        <button type='button' onClick={handleAddTask}>
-          ADD
-        </button>
-      </div>
-      <div>
-        <ul>
+        <h1 className={styles.heading}>Todo</h1>
+        <div className={styles.inputContainer}>
+          <input
+            type='text'
+            value={input}
+            onChange={handleChange}
+            onKeyDown={handleKeyPress}
+            className={styles.input}
+          />
+          <button type='button' onClick={handleAddTask} className={styles.button}>
+            ADD
+          </button>
+        </div>
+        <ul className={styles.taskList}>
           {tasks.map((task) => (
-            <li key={task.index}>{task.text}</li>
+            <li key={task.index} className={styles.taskListItem}>
+              {task.text}
+            </li>
           ))}
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
