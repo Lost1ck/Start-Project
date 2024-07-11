@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "target": "esnext", // Использует последние возможности JavaScript
-    "module": "esnext", // Использует ESNext модульную систему
-    "lib": ["dom", "dom.iterable", "esnext"], // Подключает библиотеки DOM и ESNext
-    "allowJs": true, // Разрешает компиляцию файлов JavaScript
-    "skipLibCheck": true, // Пропускает проверку типов в библиотечные файлы
-    "esModuleInterop": true, // Включает совместимость с ES модулями
-    "allowSyntheticDefaultImports": true, // Разрешает синтетические импорты по умолчанию
-    "strict": true, // Включает строгий режим
-    "forceConsistentCasingInFileNames": true, // Требует единообразия в регистре имен файлов
-    "noFallthroughCasesInSwitch": true, // Запрещает падение в switch/case
-    "moduleResolution": "node", // Использует Node.js резолюцию модулей
-    "resolveJsonModule": true, // Разрешает импорт JSON файлов
-    "isolatedModules": true, // Поддержка изолированных модулей
-    "jsx": "react-jsx", // Использует новый JSX трансформатор
-    "typeRoots": ["./node_modules/@types", "./src/global.d.ts"] // Указывает пути для типов
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "typeRoots": ["./node_modules/@types", "./src/global.d.ts"]
   },
-  "include": ["src"], // Включает папку src в компиляцию
-  "exclude": ["node_modules"] // Исключает папку node_modules из компиляции
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
