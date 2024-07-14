@@ -17,7 +17,7 @@ export default function Admin() {
       </ul>
       <Routes>
         <Route path='settings' element={<Settings />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='settings' element={<Settings />} />
       </Routes>
     </div>
   );
