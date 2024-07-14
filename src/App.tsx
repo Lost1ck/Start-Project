@@ -1,84 +1,37 @@
-import React, { MouseEventHandler, useEffect, useRef, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
-import styles from './App.module.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Admin from './components/Admin';
+import NotFound from './components/NotFound';
+import './components/styles/App.module.scss';
 
-const App = () => {
-  const [input, setInput] = useState<string>('');
-  const [tasks, setTasks] = useState<{ text: string; id: string }[]>([]);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const hasLoadedTasks = useRef(false);
-
-  useEffect(() => {
-    if (!hasLoadedTasks.current) {
-      const storedTasks = localStorage.getItem('tasks');
-      if (storedTasks) {
-        setTasks(JSON.parse(storedTasks));
-      }
-      hasLoadedTasks.current = true;
-    }
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }, [tasks]);
-
-  function addTask() {
-    if (input.trim() === '') return;
-    setTasks([...tasks, { text: input, id: uuidv4() }]);
-    setInput('');
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setInput(e.target.value);
-  }
-
-  function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
-    if (e.key === 'Enter') {
-      addTask();
-    }
-  }
-
-  function onClickDelete(taskId: string) {
-    setTasks(tasks.filter((task) => task.id !== taskId));
-  }
-
+const App: React.FC = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <h1 className={styles.heading}>Todoshka</h1>
-        <div className={styles.inputContainer}>
-          <input
-            ref={inputRef}
-            className={styles.input}
-            type='text'
-            value={input}
-            onKeyDown={handleKeyDown}
-            onChange={handleChange}
-          />
-          <button className={styles.button} onClick={addTask}>
-            Add
-          </button>
-        </div>
-        <ul className={styles.taskList}>
-          <>
-            {tasks.map((task) => (
-              <li key={task.id} className={styles.taskListItem}>
-                <p>{task.text}</p>
-                <button className={styles.button} onClick={() => onClickDelete(task.id)}>
-                  Delete
-                </button>
-              </li>
-            ))}
-          </>
-        </ul>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+            </li>
+            <li>
+              <Link to='/admin'>Admin</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/admin/*' element={<Admin />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 };
 

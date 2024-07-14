@@ -1,0 +1,16 @@
+ul {
+  display: flex;
+  padding: 20px 30px !important;
+  margin: 0;
+  justify-content: space-evenly;
+}
+
+li > a {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+li > a:visited {
+  text-decoration: none !important;
+  color: #000 !important;
+}
