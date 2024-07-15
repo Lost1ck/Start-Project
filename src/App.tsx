@@ -10,7 +10,6 @@ import Header from './components/Header';
 
 const isAdmin: boolean = false; // Заменить на реальную логику доступа
 
-
 interface IisAdmin {
   isAdmin: boolean;
   Header: React.FC;

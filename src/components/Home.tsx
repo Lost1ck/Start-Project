@@ -20,7 +20,7 @@ const Home: React.FC = () => {
           <span>{count}</span>
           <button className={styles.button} onClick={() => dispatch(increment())}>+</button>
           <button className={styles.button} onClick={() => dispatch(incrementByAmount(5))}>Increment by 5</button>
-          {/* <button className={styles.button} onClick={() => dispatch(incrementAsync(5))}>Increment by 5 async</button> */}
+          <button className={styles.button} onClick={() => dispatch(incrementAsync(5))}>Increment by 5 async</button>
         </div>
       </div>
     </div>
