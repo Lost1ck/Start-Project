@@ -4,6 +4,7 @@ on:
     branches: [ master, main ]
   pull_request:
     branches: [ master, main ]
+  workflow_dispatch:
 
 jobs:
   Explore-GitHub-Actions:
@@ -16,7 +17,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' # Используйте версию Node.js, подходящую для вашего проекта
+          node-version: '18'
 
       - name: Install Yarn
         run: npm install -g yarn
@@ -27,11 +28,11 @@ jobs:
       - name: Run build
         run: yarn build
 
-      # - name: Run Prettier
-      #   run: yarn format
+      - name: Run Prettier
+        run: yarn format
 
-      # - name: Run Stylelint
-      #   run: yarn lint:css
+      - name: Run Stylelint
+        run: yarn lint:css
 
       - name: Run ESLint
         run: yarn lint
