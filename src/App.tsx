@@ -9,6 +9,7 @@ import styles from './components/styles/App.module.scss';
 import Header from './components/Header';
 
 const isAdmin: boolean = false; // Заменить на реальную логику доступа
+let someNewLogic;
 
 interface IisAdmin {
   isAdmin: boolean;
