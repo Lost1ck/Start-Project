@@ -11,7 +11,7 @@ const ProtectedRoute: React.FC<IProtectedRouteProps> = ({ isAllowed, redirectTo,
   const location = useLocation();
 
   if (!isAllowed) {
-    return <Navigate to={redirectTo} state={{ from: location }} />;
+    return <Navigate to={redirectTo} state={{ from: location }}  replace />;
   }
 
   return <>{children}</>;
