@@ -1,9 +1,9 @@
 name: GitHub Actions Demo
 on: 
   push: 
-    branches: [ main, master ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ master, main ]
 
 jobs:
   Explore-GitHub-Actions:
@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '18' # Используйте версию Node.js, подходящую для вашего проекта
 
       - name: Install Yarn
         run: npm install -g yarn
