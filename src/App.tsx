@@ -30,19 +30,22 @@ function AppContent() {
     <>
       <Header isAdmin={isAdmin} />
       <main>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/admin/*"
-          element={<ProtectedRoute isAllowed={isAdmin} redirectTo="/">
-            <Admin />
-          </ProtectedRoute>} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/admin/*"
+            element={
+              <ProtectedRoute isAllowed={isAdmin} redirectTo="/">
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
     </>
-  )
+  );
 }
 
 export default App;

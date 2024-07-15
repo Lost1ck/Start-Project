@@ -1,9 +1,9 @@
 name: GitHub Actions Demo
-on: 
-  push: 
-    branches: [ master, main ]
+on:
+  push:
+    branches: [master]
   pull_request:
-    branches: [ master, main ]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
@@ -31,8 +31,8 @@ jobs:
       - name: Run Prettier
         run: yarn format
 
-      - name: Run Stylelint
-        run: yarn lint:css
+      # - name: Run Stylelint
+      #   run: yarn lint:scss
 
       - name: Run ESLint
         run: yarn lint

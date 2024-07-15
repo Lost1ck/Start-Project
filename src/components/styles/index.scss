@@ -1,9 +1,9 @@
 @import 'normalize.css';
 @import 'reset-css/reset.css';
-@import './variables.scss';
+@import './variables';
 
 body {
-  background-color: rgb(98, 185, 121);
+  background-color: rgb(98 185 121);
 }
 
 * {
