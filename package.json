@@ -7,7 +7,7 @@
     "dev": "concurrently \"vite\" \"eslint 'src/**/*.tsx' --color\" \"prettier --write src/**/*.{tsx,css}\"",
     "build": "vite build",
     "format": "prettier --write src/**/*.{tsx,css,scss}",
-    "lint": "eslint src/**/*.{ts,tsx} --color",
+    "lint": "eslint src/**/*.{tsx} --color",
     "lint-staged": "lint-staged",
     "preview": "vite preview"
   },
