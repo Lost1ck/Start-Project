@@ -49,7 +49,7 @@ module.exports = {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}', 'vite.config.{js,cjs}'],
+      files: ['.eslintrc.{tsx,cjs}', 'vite.config.{tsx,cjs}'],
       parserOptions: {
         sourceType: 'script',
       },
