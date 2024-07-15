@@ -16,7 +16,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14' # Используйте версию Node.js, подходящую для вашего проекта
+          node-version: '18'
 
       - name: Install Yarn
         run: npm install -g yarn
