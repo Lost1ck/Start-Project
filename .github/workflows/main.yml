@@ -11,11 +11,11 @@ jobs:
       - name: installing yarn
         run: yarn add
       - name: run build
-        run: build
+        run: yarn build
       - name: run format
-        run: format
+        run: yarn format
       - name: run lint
-        run: lint
+        run: yarn lint
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo "🍏 This job's status is ${{ job.status }}."
