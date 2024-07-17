@@ -1,21 +1,41 @@
 name: GitHub Actions Demo
-on: 
-  push: 
-    branches: [ master ]
+on:
+  push:
+    branches: [master, main]
   pull_request:
-      branches: [ master ]
+    branches: [master, main]
+  workflow_dispatch:
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+
     steps:
-      - name: installing yarn
-        run: yarn add
-      - name: run build
-        run: yarn build
-      - name: run format
-        run: yarn format
-      - name: run lint
-        run: yarn lint
       - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run build
+        run: yarn build
+
+      - name: Run Prettier
+        run: yarn format
+
+      # - name: Run Stylelint
+      #   run: yarn lint:scss // neds to make normal setting ://
+
+      - name: Run ESLint
+        run: yarn lint
+
+      - name: Echo job status
+        run: echo "🍏 This job's status is ${{ job.status }}."

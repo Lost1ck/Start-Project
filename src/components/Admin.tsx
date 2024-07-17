@@ -1,9 +1,8 @@
-import React from 'react';
 import { Link, Route, Routes, useMatch } from 'react-router-dom';
-import NotFound from './NotFound';
 import Settings from './Settings';
+import React from 'react';
 
-export default function Admin() {
+const Admin: React.FC = () => {
   let match = useMatch('/admin/*');
   let url = match?.pathname || '/admin';
 
@@ -16,9 +15,11 @@ export default function Admin() {
         </li>
       </ul>
       <Routes>
-        <Route path='settings' element={<Settings />} />
-        <Route path='settings' element={<Settings />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="settings" element={<Settings />} />
       </Routes>
     </div>
   );
-}
+};
+
+export default Admin;

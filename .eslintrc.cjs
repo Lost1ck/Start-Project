@@ -23,7 +23,14 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y', 'import', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'import',
+    'prettier',
+  ],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
@@ -53,6 +60,12 @@ module.exports = {
       parserOptions: {
         sourceType: 'script',
       },
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['src/**/*.tsx'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },
