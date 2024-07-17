@@ -10,7 +10,8 @@
     "lint": "eslint src/**/*.tsx --color",
     "lint:scss": "stylelint 'src/**/*.scss'",
     "lint-staged": "lint-staged",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cp": "git add . && git commit -m 'fix' && git push origin todo"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
