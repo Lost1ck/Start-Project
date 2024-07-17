@@ -27,11 +27,6 @@ const Home = () => {
             -
           </button>
           <span>{count}</span>
-<<<<<<< HEAD
-          <button className={styles.button} onClick={() => dispatch(increment())}>+</button>
-          {/* <button className={styles.button} onClick={() => dispatch(incrementByAmount(5))}>Increment by 5</button>
-          <button className={styles.button} onClick={() => dispatch(incrementAsync(5))}>Increment by 5 async</button> */}
-=======
           <button
             className={styles.button}
             onClick={() => dispatch(increment())}
@@ -50,7 +45,6 @@ const Home = () => {
           >
             Increment by 5 async
           </button>
->>>>>>> origin/main
         </div>
       </div>
     </>
