@@ -11,7 +11,7 @@
     "lint:scss": "stylelint 'src/**/*.scss'",
     "lint-staged": "lint-staged",
     "preview": "vite preview",
-    "cnp": "git add . && git commit -m 'fix' && git push"
+    "cp": "git add . && git commit -m 'fix' && git push origin todo"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
