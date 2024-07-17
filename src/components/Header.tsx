@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import styles from './styles/Header.module.scss';
+import styles from './shared/styles/Header.module.scss';
+import React from 'react';
 
 interface IisAdmin {
   isAdmin: boolean;
 }
 
-export default function Header({ isAdmin }: IisAdmin) {
+const Header: React.FC<IisAdmin> = ({ isAdmin }) => {
   return (
     <header className={styles.header}>
       <nav>
@@ -25,4 +26,6 @@ export default function Header({ isAdmin }: IisAdmin) {
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

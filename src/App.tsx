@@ -1,14 +1,15 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Admin from './components/Admin';
 import NotFound from './components/NotFound';
 import ProtectedRoute from './components/PrivacyRoutes/ProtectedRoute';
+import styles from './components/shared/styles/App.module.scss';
 
 import Header from './components/Header';
 
-const isAdmin: boolean = false; // Заменить на реальную логику доступа
+const isAdmin: boolean = true; // Заменить на реальную логику доступа
 
 interface IisAdmin {
   isAdmin: boolean;

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import 'normalize.css';
 import 'reset-css/reset.css';
-import './components/styles/index.scss';
+import './components/shared/styles/index.scss';
 import { store } from './store';
 import { Provider } from 'react-redux';
 

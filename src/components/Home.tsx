@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../store';
-import styles from './styles/App.module.scss';
+import styles from './shared/styles/buttons.module.scss';
 import {
   increment,
   decrement,
