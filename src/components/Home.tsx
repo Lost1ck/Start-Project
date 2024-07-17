@@ -1,7 +1,6 @@
-import React from 'react';
-import styles from './styles/Header.module.scss';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../store';
+import styles from './styles/App.module.scss';
 import {
   increment,
   decrement,
@@ -9,12 +8,12 @@ import {
   incrementAsync,
 } from '../features/CounterSlice';
 
-const Home: React.FC = () => {
+const Home = () => {
   const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useAppDispatch();
 
   return (
-    <div>
+    <>
       <div>
         <h2>Home</h2>
         <p>Welcome to the Home Page!</p>
@@ -48,7 +47,7 @@ const Home: React.FC = () => {
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

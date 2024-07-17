@@ -5,7 +5,7 @@ import About from './components/About';
 import Admin from './components/Admin';
 import NotFound from './components/NotFound';
 import ProtectedRoute from './components/PrivacyRoutes/ProtectedRoute';
-import styles from './components/styles/App.module.scss';
+
 import Header from './components/Header';
 
 const isAdmin: boolean = false; // Заменить на реальную логику доступа

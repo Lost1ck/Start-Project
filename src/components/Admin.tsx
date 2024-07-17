@@ -1,6 +1,4 @@
-import React from 'react';
 import { Link, Route, Routes, useMatch } from 'react-router-dom';
-import NotFound from './NotFound';
 import Settings from './Settings';
 
 export default function Admin() {
